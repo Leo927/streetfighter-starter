@@ -21,9 +21,23 @@ $(document).ready(function(){
 	.mouseup(function(){
 		console.log('mouse up');
 		$('.ryu').children().hide();
-		$('.ryu-still').show();
+		$('.ryu-ready').show();
 
 	});
+
+	$(document).keydown(function(event) {
+        if(event.which==88) {
+			$('.ryu').children().hide();
+			$('.ryu-cool').show();
+        }
+    })
+    .keyup(function(event) {
+        if(event.which==88) {
+			$('.ryu').children().hide();
+			$('.ryu-ready').show();
+        }
+    });
+
 });
 
 function playHadouken(){
@@ -31,3 +45,4 @@ function playHadouken(){
 	$('#hadouken-sound')[0].load();
 	$('#hadouken-sound')[0].play();
 }
+
